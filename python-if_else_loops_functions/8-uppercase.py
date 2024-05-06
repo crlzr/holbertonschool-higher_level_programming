@@ -6,6 +6,4 @@ def uppercase(str):
             print(chr(ord(letter) - 32), end="")
         else:
             print(letter, end="")
-    print()  # Print a newline after processing the entire string
-
 
