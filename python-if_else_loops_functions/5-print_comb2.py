@@ -2,5 +2,3 @@
 for i in range(0, 99):
     print("{:02}, ".format(i), end="")
 print(99)
-
-#print("{:02}".format(99))
