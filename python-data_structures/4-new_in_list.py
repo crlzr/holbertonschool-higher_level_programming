@@ -1,12 +1,9 @@
 #!/usr/bin/python3
 
 def new_in_list(my_list, idx, element):
-    """replaces the list element at the specified index."""
-
     if idx < 0 or idx >= len(my_list):
-        return my_list
-
-    new_list = my_list.copy()
-
-    new_list[idx] = element
-    return new_list
+        return my_list.copy()
+    else:
+        copy = my_list.copy()
+        copy[idx] = element
+        return copy
