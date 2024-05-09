@@ -2,7 +2,6 @@
 
 a = 89
 b = 10
-temp = 0
 
 temp = a
 a = b
