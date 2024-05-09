@@ -3,7 +3,7 @@
 def max_integer(my_list=[]):
     my_list.sort(reverse=True)
 
-    if my_list == "":
-        return 0, None
+    if not my_list:
+        return None
     else:
         return (my_list[0])
