@@ -13,8 +13,8 @@ def roman_to_int(roman_string):
 
         value = roman_numerals.get(roman_string[i], 0)
 
-        if i + 1 < len(roman_string) \
-        and roman_numerals.get(roman_string[i + 1], 0) > value:
+        if (i + 1 < len(roman_string) and
+            roman_numerals.get(roman_string[i + 1], 0) > value):
 
             result -= value
         else:
