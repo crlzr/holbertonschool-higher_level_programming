@@ -7,3 +7,4 @@ def safe_print_integer_err(value):
             return True
     except (TypeError, IndexError, ValueError):
         print("Exception: ")
+        return False
