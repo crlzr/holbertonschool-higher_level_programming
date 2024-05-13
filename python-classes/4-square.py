@@ -3,7 +3,7 @@
 
 
 class Square:
-
+    '''Contains a private instance attribute of size with conditions'''
 
     def __init__(self, size=0):
         '''Contains a private attribute called size'''
