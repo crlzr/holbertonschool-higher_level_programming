@@ -13,15 +13,17 @@ class Square:
             raise ValueError("size must be >= 0")
 
     def area(self):
+        '''Calcuates square area'''
         return self.__size ** 2
 
     @property
     def size(self):
+        '''Retrieves itself'''
         return self.__size
 
     @size.setter
     def size(self, value):
-        '''Contains an attribute called size'''
+        '''Determines whether the size is appropriate'''
         self.__size = value
         if type(value) is not int:
             raise TypeError("size must be an integer")
