@@ -1,7 +1,11 @@
 #!/usr/bin/python3
 
+'''A class Square that defines a square with conditions'''
+
 class Square:
+    '''A class Square that defines a square with conditions'''
     def __init__(self, size=0, position=(0, 0)):
+        '''two attributes (private): size and position'''
         self.size = size
         self.position = position
 
