@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-
 '''A class Square that defines a square with conditions'''
+
 
 class Square:
     '''A class Square that defines a square with conditions'''
