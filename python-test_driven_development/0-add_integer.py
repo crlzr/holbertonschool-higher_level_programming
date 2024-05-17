@@ -1,7 +1,11 @@
 #!/usr/bin/python3
+"""
+add_integer: module that adds two integers together
+"""
 
 def add_integer(a, b=98):
-    '''A function that adds two integers
+    """
+    A function that adds two integers
 
     Args:
         int a: The first integer to add.
@@ -12,7 +16,9 @@ def add_integer(a, b=98):
 
     Raises:
         TypeError: If either a or b is not an integer.
-    '''
+
+    Unit tests: located in tests/0-add_integer.txt
+    """
 
     if not isinstance(a, (int, float)):
         raise TypeError("a must be an integer")
@@ -25,7 +31,3 @@ def add_integer(a, b=98):
         b = int(b)
 
     return a + b
-
-if __name__ == "__main__":
-    import doctest
-    doctest.testmod()
