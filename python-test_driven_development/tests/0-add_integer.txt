@@ -1,7 +1,7 @@
-The `` add_integer module ``
+The ``add_integer module``
 ====================================
 
-Using `` add_integer ``
+Using ``add_integer``
 ---------------------
 
 This is an example text file.
@@ -11,7 +11,7 @@ First import ``add_integer`` from the `` add_integer `` module.
 Now use it:
 
 Test - a and b are integers
->>> add_integer(1,2)
+>>> add_integer(1, 2)
 3
 
 Test - a is a float
