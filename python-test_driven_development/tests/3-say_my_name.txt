@@ -25,4 +25,4 @@ Tests:
 
     Test - only one argument given
     >>> say("Walter")
-    My name is Walter
+    My name is Walter 
