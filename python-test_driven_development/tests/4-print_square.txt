@@ -41,7 +41,7 @@ Tests:
     ...
     TypeError: size must be an integer
 
-    Test - size is missing
+    Test - argument is missing
     print_s()
     Traceback (most recent call last):
     ...
