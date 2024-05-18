@@ -1,19 +1,29 @@
 The ``text_indentation`` module
-======================
+===============================
 
 Using ``text_indentation``
--------------------
-
+--------------------------
 
 First import ``text_indentation`` from the ``5-text_indentation`` file:
 
-    >>> text = __import__('5-text_indentation').text_indentation
+    >>> text_i = __import__('5-text_indentation').text_indentation
 
 Tests:
 
+    Test - text is a string with special characters
+    >>> text_i("Hello.My name is Carole")
+    Hello.
+    <BLANKLINE>
+    My name is Carole
+
     Test - text is not a string
-    >>> text(3)
+    >>> text_i(3)
     Traceback (most recent call last):
     ...
     TypeError: text must be a string
 
+    Test - missing string
+    >>> text_i()
+    Traceback (most recent call last):
+    ...
+    TypeError: text_indentation() missing 1 required positional argument: 'text'
