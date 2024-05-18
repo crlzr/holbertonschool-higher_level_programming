@@ -15,14 +15,14 @@ Tests:
     >>> say(3, "Walter")
     Traceback (most recent call last):
     ...
-    TypeError: first_name must be string
+    TypeError: first_name must be a string
 
     Test - second name is not a string
     >>> say("Carole", 3)
     Traceback (most recent call last):
     ...
-    TypeError: last_name must be string
+    TypeError: last_name must be a string
 
     Test - only one argument given
     >>> say("Walter")
-    My name is Walter 
+    My name is Walter
