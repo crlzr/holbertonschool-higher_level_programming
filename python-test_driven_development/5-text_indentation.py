@@ -2,6 +2,8 @@
 """
 A function that prints text with 2 new lines after each of these chars: . ? :
 """
+
+
 def text_indentation(text):
     """
     Args:
