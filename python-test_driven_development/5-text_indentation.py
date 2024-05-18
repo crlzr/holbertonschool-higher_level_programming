@@ -1,8 +1,12 @@
 #!/usr/bin/python3
+"""
+A function that prints text with 2 new lines after each of these chars: . ? :
+"""
 def text_indentation(text):
     """
     Args:
         text (str): The input text.
+        result = the changed text
     Raises:
         TypeError: If text is not a string.
     Prints:
