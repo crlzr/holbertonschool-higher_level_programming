@@ -64,7 +64,6 @@ class Rectangle:
         rectangle_lines = ["#" * self.__width] * self.__height
         return "\n".join(rectangle_lines)
 
-
     def __repr__(self):
         """
         return a string representation of the rectangle
