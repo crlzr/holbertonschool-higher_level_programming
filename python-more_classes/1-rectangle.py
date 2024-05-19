@@ -1,8 +1,13 @@
 #!/usr/bin/python3
 """
-A class rectangle that defines a rectangle based on conditions
+Module for rectancle class
 """
+
+
 class Rectangle:
+    """
+    A class Rectangle
+    """
     def __init__(self, width=0, height=0):
         """
         Attributes width and height
@@ -18,7 +23,8 @@ class Rectangle:
     def width(self, value):
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
-        elif value < 0:
+
+        if value < 0:
             raise ValueError("width must be >= 0")
         self._width = value
 
@@ -30,6 +36,7 @@ class Rectangle:
     def height(self, value):
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
-        elif value < 0:
+
+        if value < 0:
             raise ValueError("height must be >= 0")
         self._height = value
