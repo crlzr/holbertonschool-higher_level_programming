@@ -1,0 +1,34 @@
+The ``MyList`` module
+======================
+
+Using ``MyList``
+-------------------
+
+
+First import ``print_sorted`` from the ``1-my_list`` file:
+
+    >>> print_s = __import__('1-my_list').MyList.print_sorted
+
+Tests:
+
+    Test - check if sorting works
+    >>> print_s([1, 4, 2, 3, 5])
+    [1, 2, 3, 4, 5]
+
+    Test - list is empty
+    >>> print_s([])
+    []
+
+    Test - negative integers
+    >>> print_s([-1, -2, -3, -4, -5])
+    [-5, -4, -3, -2, -1]
+
+    Test - all values are the same
+    >>> print_s([1, 1, 1, 1, 1])
+    [1, 1, 1, 1, 1]
+
+    Test - a string in the list
+    >>> print_s(["hello", 1, 2, 3, 4])
+    Traceback (most recent call last):
+    ....
+    TypeError: '<' not supported between instances of 'int' and 'str'
