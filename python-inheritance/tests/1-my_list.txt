@@ -32,3 +32,8 @@ Tests:
     Traceback (most recent call last):
     ....
     TypeError: '<' not supported between instances of 'int' and 'str'
+
+    Test - making an instance of MyList
+    >>> my_list = MyList()
+
+    
