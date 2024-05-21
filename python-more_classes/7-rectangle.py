@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 """
-Module for rectancle class
+Module for rectangle class
 """
-
 
 class Rectangle:
     """
@@ -18,6 +17,7 @@ class Rectangle:
         """
         self.width = width
         self.height = height
+        Rectangle.number_of_instances += 1
 
     @property
     def width(self):
@@ -27,11 +27,9 @@ class Rectangle:
     def width(self, value):
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
-
         if value < 0:
             raise ValueError("width must be >= 0")
         self.__width = value
-        Rectangle.number_of_instances += 1
 
     @property
     def height(self):
@@ -41,7 +39,6 @@ class Rectangle:
     def height(self, value):
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
-
         if value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
@@ -66,7 +63,7 @@ class Rectangle:
         """
         if self.__width == 0 or self.__height == 0:
             return ""
-        rectangle_lines = [Rectangle.print_symbol * self.__width] * self.__height
+        rectangle_lines = [str(self.print_symbol) * self.__width] * self.__height
         return "\n".join(rectangle_lines)
 
     def __repr__(self):
@@ -79,3 +76,13 @@ class Rectangle:
     def __del__(self):
         print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
+
+# Example usage
+if __name__ == "__main__":
+    my_rectangle_1 = Rectangle(8, 4)
+    print(my_rectangle_1)
+    my_rectangle_1.print_symbol = "H"
+    print(my_rectangle_1)
+
+    my_rectangle_2 = Rectangle(2, 1)
+    print(my_rectangle_2)
