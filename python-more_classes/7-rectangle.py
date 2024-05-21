@@ -3,6 +3,7 @@
 Module for rectangle class
 """
 
+
 class Rectangle:
     """
     A class Rectangle
@@ -63,7 +64,8 @@ class Rectangle:
         """
         if self.__width == 0 or self.__height == 0:
             return ""
-        rectangle_lines = [str(self.print_symbol) * self.__width] * self.__height
+        rectangle_lines = [str(self.print_symbol) * self.__width] \
+            * self.__height
         return "\n".join(rectangle_lines)
 
     def __repr__(self):
@@ -76,13 +78,3 @@ class Rectangle:
     def __del__(self):
         print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
-
-# Example usage
-if __name__ == "__main__":
-    my_rectangle_1 = Rectangle(8, 4)
-    print(my_rectangle_1)
-    my_rectangle_1.print_symbol = "H"
-    print(my_rectangle_1)
-
-    my_rectangle_2 = Rectangle(2, 1)
-    print(my_rectangle_2)
