@@ -1,48 +1,31 @@
-The ``base_geometry`` module
-======================
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
-Using ``BaseGeometry``
--------------------
+>>> bg = BaseGeometry()
 
+>>> bg.integer_validator("Mishel", 18)
 
-First import ``base_geometry`` from the ``7-base_geometry`` file:
+>>> bg.integer_validator("Mishel", "Tomas")
+Traceback (most recent call last):
+TypeError: Mishel must be an integer
 
-    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+>>> bg.integer_validator("Mishel")
+Traceback (most recent call last):
+TypeError: integer_validator() missing 1 required positional argument: 'value'
 
-Tests:
+>>> bg.integer_validator()
+Traceback (most recent call last):
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
 
-        Test - Making an instance of BaseGeometry
-        >>> bg = BaseGeometry()
+>>> bg.integer_validator("Mishel", "Tomas", "Rodriguez")
+Traceback (most recent call last):
+TypeError: integer_validator() takes 3 positional arguments but 4 were given
 
-        Test - Testing age and positive integer
-        >>> bg.integer_validator("age", 2)
+>>> bg.integer_validator(Mishel, 18)
+Traceback (most recent call last):
+NameError: name 'Mishel' is not defined
 
-        Test - Negative integer value
-        >>> bg.integer_validator("age", -2)
-        Traceback (most recent call last):
-        ...
-        ValueError: <name> must be greater than 0
+>>> bg.integer_validator("18", 18)
 
-        Test - Age is exactly 0
-        >>> bg.integer_validator("age", 0)
-        Traceback (most recent call last):
-        ...
-        ValueError: <name> must be greater than 0
-
-        Test - Value is a string
-        >>> bg.integer_validator("age", "hello")
-        Traceback (most recent call last):
-        ...
-        TypeError: <name> must be an integer
-
-        Test - one value passed
-        >>> bg.integer_validator("age", )
-        Traceback (most recent call last):
-        ...
-        TypeError: integer_validator() missing 1 required positional argument: 'value'
-
-        Test - zero arguments passed
-        Traceback (most recent call last):
-        ...
-        TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
-
+>>> bg.integer_validator( , 18)
+Traceback (most recent call last):
+SyntaxError: invalid syntax
