@@ -69,5 +69,5 @@ circle = Circle(5)
 rectangle = Rectangle(4, 7)
 
 
-shape_info(circle)
-shape_info(rectangle)
+#shape_info(circle)
+#shape_info(rectangle)
