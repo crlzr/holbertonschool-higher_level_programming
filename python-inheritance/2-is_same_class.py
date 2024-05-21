@@ -3,6 +3,16 @@
 
 
 def is_same_class(obj, a_class):
-    """returns true / false depending on whether obj and class are the same."""
+    """
+    checks if an object is an instance of a class
 
-    return type(obj) == a_class
+    Args:
+        obj (object): object to check instance of
+        a_class (object): object to check if obj is of same type
+
+    Returns:
+        bool: True if the obj is an instance of a_class,
+        otherwise False
+    """
+    return type(obj).__name__ == a_class.__name__
+
