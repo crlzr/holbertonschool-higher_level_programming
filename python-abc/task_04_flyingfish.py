@@ -48,6 +48,9 @@ class FlyingFish(Fish, Bird):
         """
         print("The flying fish is soaring!")
 
+    def swim(self):
+        print("The flying fish is swimming!")
+
     def habitat(self):
         """
         overwritten habitat method
