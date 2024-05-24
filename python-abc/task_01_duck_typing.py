@@ -32,7 +32,7 @@ class Circle(Shape):
     Subclass Circle
     """
     def __init__(self, radius):
-        self.radius = radius
+        self.radius = abs(radius)
 
     def area(self):
         return pi * self.radius ** 2
@@ -65,7 +65,7 @@ def shape_info(shape):
 
 
 # Testing
-circle = Circle(5)
+circle = Circle(-5)
 rectangle = Rectangle(4, 7)
 
 
