@@ -30,5 +30,9 @@ class Student:
             return dict
 
     def reload_from_json(self, json):
+        """
+        public attribute that replaces all attributes of the
+        Student instance
+        """
         for key in json:
             self.__dict__[key] = json[key]
