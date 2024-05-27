@@ -22,7 +22,7 @@ class Student:
         dict = {}
 
         if attrs is None:
-            return vars()
+            return self.__dict__
         else:
             for key in attrs:
                 if key in self.__dict__:
