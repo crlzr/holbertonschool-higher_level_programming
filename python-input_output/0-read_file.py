@@ -9,5 +9,4 @@ def read_file(filename=""):
     Reads a textfile and prints the content to stdout
     """
     with open(filename) as file:
-        content = file.read()
-        print(content)
+        print(file.read(), end="")
