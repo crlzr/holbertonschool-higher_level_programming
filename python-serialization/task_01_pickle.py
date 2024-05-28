@@ -40,5 +40,8 @@ class CustomObject:
         of the CustomObject from the provided
         filename
         """
-        with open(filename, 'rb') as file:
-            return pickle.load(file)
+        try:
+            with open(filename, 'rb') as file:
+                return pickle.load(file)
+        except FileNotFoundError:
+            print("Specified file not found!")
