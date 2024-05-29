@@ -18,7 +18,7 @@ class MyHandler(BaseHTTPRequestHandler):
 
             json_data = {"name": "John", "age": 30, "city": "New York"}
             json_string = json.dumps(json_data)
-            self.wfile.write(json_string)
+            self.wfile.write(json_string.encode('utf-8'))  # Encode string to bytes
         else:
             self.send_response(404)
             self.end_headers()
