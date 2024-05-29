@@ -23,7 +23,7 @@ class MyHandler(BaseHTTPRequestHandler):
             self.send_response(404)
             self.end_headers()
 
-port = 8080
+port = 8000
 server_address = ('', port)
 httpd = HTTPServer(server_address, MyHandler)
 httpd.serve_forever()
