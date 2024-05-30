@@ -2,8 +2,7 @@
 """ Nameless Module for Task 4 """
 
 from flask import Flask
-from flask import jsonify
-request, abort
+from flask import jsonify, request, abort
 
 # Step 1
 app = Flask(__name__)
