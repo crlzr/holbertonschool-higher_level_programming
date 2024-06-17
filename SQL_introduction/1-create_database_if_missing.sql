@@ -2,4 +2,4 @@
 -- if the database exists, the script should not fail
 -- not allowed to use SELECT or SHOW
 
-CREATE DATABASE hbtn_0c_0;
+CREATE DATABASE IF NOT EXISTS hbtn_0c_0;
