@@ -1,3 +1,3 @@
 -- Write a script that lists all databases of your MYSQL server
 
-SHOW Databases;
+SHOW databases;
