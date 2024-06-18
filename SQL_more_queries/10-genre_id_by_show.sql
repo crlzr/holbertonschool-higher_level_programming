@@ -2,8 +2,8 @@
 -- list all shows contained in hbtn_0d_tvshows that have at least 1 genre linked
 
 
-SELECT title, genre_id
+SELECT tv_shows.title, tv_show_genres.genre_id
 FROM tv_shows
-JOIN tv_genres
-ON tv_shows.title = tv_show_genres.genre_id
-ORDER BY title ASC, genre_id ASC;
+JOIN tv_show_genres
+ON tv_shows.title = tv_show_genres.title
+ORDER BY tv_shows.title ASC, tv_show_genres.genre_id ASC;
