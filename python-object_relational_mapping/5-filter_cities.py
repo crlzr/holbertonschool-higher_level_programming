@@ -22,8 +22,8 @@ if __name__ == "__main__":
             FROM cities
             INNER JOIN states
             ON cities.state_id = states.id
-            WHERE BINARY state name = '{}'
-            ORDER BY id ASC""".format(sys.argv[4])
+            WHERE BINARY states.name = '{}'
+            ORDER BY cities.id ASC""".format(sys.argv[4])
 
     cur = db.cursor()
     cur.execute(query)
