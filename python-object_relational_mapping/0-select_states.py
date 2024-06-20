@@ -1,7 +1,8 @@
 #!/usr/bin/python3
+'''Nameless module'''
 
-import MySQLdb
 import sys
+import MySQLdb
 
 
 db = MySQLdb.connect(host='localhost',
