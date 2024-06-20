@@ -29,5 +29,10 @@ if __name__ == "__main__":
     cur.execute(query)
     rows = cur.fetchall()
 
+    i = 0
     for row in rows:
-        print(row)
+        print("{}".format(row[1]), end="")
+        i = i + 1
+        if i != len(rows):
+            print(", ", end="")
+    print("")
