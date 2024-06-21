@@ -1,18 +1,21 @@
 #!/usr/bin/python3
+"""Nameless module to suck data out from the database
 """
-Scripts that lists all State objects from the database hbtn_0e_6_usa
-"""
-import MySQLdb
 import sys
-from sqlalchemy import create_engine
 from model_state import Base, State
+from sqlalchemy import (create_engine)
+from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
-    database = MySQLdb.connect(host="localhost", user=sys.argv[1],
-                               passwd=sys.argv[2], db=sys.argv[3])
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
+        sys.argv[1],
+        sys.argv[2],
+        sys.argv[3]),
+        pool_pre_ping=True
+    )
+    Session = sessionmaker(bind=engine)
+    session = Session()
 
-    cur = database.cursor()
-    cur.execute("SELECT * FROM states ORDER BY id;")
-    rows = cur.fetchall()
+    rows = session.query(State).all()
     for row in rows:
-        print("{}: {}".format(row[0], row[1]))
+        print("{0}: {1}".format(row.id, row.name))
