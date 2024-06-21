@@ -17,6 +17,7 @@ if __name__ == "__main__":
     session = Session()
 
     first_state = session.query(State).first()
-    #for row in rows:
-        #print("{0}: {1}".format(row.id, row.name))
-    print("{}: {}".format(first_state.id, first_state.name))
+    if first_state:
+        print("{}: {}".format(first_state.id, first_state.name))
+    else:
+        print("Nothing")
