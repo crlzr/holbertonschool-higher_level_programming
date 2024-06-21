@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Nameless module to suck data out from the database
+"""Script to list all state object that contain the letter 'a'
 """
 import sys
 from model_state import Base, State
