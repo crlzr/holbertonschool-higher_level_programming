@@ -25,7 +25,7 @@ if __name__ == "__main__":
 
         state_name = sys.argv[4]
 
-        query = session.query(State).filter(State.name == state_name).first()
+        query = session.query(State).filter(State.name == state_name).limit(1).first()
 
         if query:
             print(query.id)
