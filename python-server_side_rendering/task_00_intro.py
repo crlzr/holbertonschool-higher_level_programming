@@ -10,7 +10,7 @@ def generate_invitations(template, attendees):
     # Check input types
     if not isinstance(template, str):
         raise ValueError
-    if not isinstance(attendees, dict):
+    if not isinstance(attendees, list):
         raise ValueError
     # Handle empty inputs
     if not template:
@@ -22,10 +22,11 @@ def generate_invitations(template, attendees):
         processed_template = template
         for placeholder in ["name", "event_title", "event_date", "event_location"]:
             value = attendee.get(placeholder, "N/A")
-            processed_template = processed_template.replace(f"{{{{{placeholder}}}}}", value)
+            if value is None:
+                value = "N/A"
+            processed_template = processed_template = template.format(**attendee)
 
-    #Output file
-    output_filename = f"output_{i}.txt"
-    with open(output_filename, "w") as output_file:
-        output_file.write(processed_template)
-
+        # Output file
+        output_filename = f"output_{i}.txt"
+        with open(output_filename, "w") as output_file:
+            output_file.write(processed_template)

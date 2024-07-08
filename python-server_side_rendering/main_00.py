@@ -1,4 +1,6 @@
-# Main file content
+#!/usr/bin/python3
+
+""" main function that will call generate invitations"""
 from task_00_intro import generate_invitations
 
 # Read the template from a file
