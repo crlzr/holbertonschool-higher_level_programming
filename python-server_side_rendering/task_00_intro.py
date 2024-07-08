@@ -29,7 +29,7 @@ def generate_invitations(template, attendees):
                 # using the ** operator to unpack dictionary
                 processed_template = template.format(**attendee)
             else:
-                # if any value in the dctionary is None - replace with N/A
+                # if any value in the dictionary is None - replace with N/A
                 attendee[key] = "N/A"
 
         # Output file
