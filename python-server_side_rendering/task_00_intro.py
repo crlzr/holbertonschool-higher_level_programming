@@ -18,13 +18,19 @@ def generate_invitations(template, attendees):
     if not attendees:
         raise IndexError
     # Process each attendee
-    for i, attendee in enumerate(attendees, start=1):
-        processed_template = template
-        for placeholder in ["name", "event_title", "event_date", "event_location"]:
-            value = attendee.get(placeholder, "N/A")
-            if value is None:
-                value = "N/A"
-            processed_template = processed_template = template.format(**attendee)
+    # count index of added attendees
+    i = 0
+
+    # iterate through each dictionary in the attendees list
+    for attendee in attendees:
+        i += 1
+        for key, value in attendee.items():
+            if value is not None:
+                # using the ** operator to unpack dictionary
+                processed_template = template.format(**attendee)
+            else:
+                # if any value in the dctionary is None - replace with N/A
+                attendee[key] = "N/A"
 
         # Output file
         output_filename = f"output_{i}.txt"
