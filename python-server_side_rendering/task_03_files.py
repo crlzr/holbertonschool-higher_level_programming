@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 
 from flask import Flask, render_template, request
-from pathlib import Path
 import json
 import csv
 
@@ -39,6 +38,8 @@ def products():
         data = load_json_data("data/products.json", id)
     elif source == "csv":
         data = load_csv_data("data/products.csv", id)
+    else:
+        raise IndexError ("Wrong Source")
 
     return render_template('product_display.html', data=data, source=source, id=id)
 
@@ -47,10 +48,6 @@ def load_json_data(filename, wanted_id = None):
     """ Load JSON data from file and returns as dictionary """
 
     data = []
-
-    # first check to see if json or csv can be found
-    if not Path(filename).is_file():
-        raise FileNotFoundError("Data file '{}' missing".format(filename))
 
     try:
         with open(filename, 'r') as f:
@@ -64,19 +61,15 @@ def load_json_data(filename, wanted_id = None):
                     product[k] = v
                 data.append(product)
 
-    except ValueError as exc:
-        raise ValueError("Unable to load data from file '{}'".format(filename)) from exc
+    except: ValueError("Unable to load data from file '{}'".format(filename))
 
     return data
 
-# function to load csv data 
+# function to load csv data
 def load_csv_data(filename, wanted_id = None):
-    """ Load JSON data from file and returns as dictionary """
+    """ Load CSV data from file and returns as dictionary """
 
     data = []
-
-    if not Path(filename).is_file():
-        raise FileNotFoundError("Data file '{}' missing".format(filename))
 
     try:
         with open(filename, 'r') as csvfile:
@@ -84,8 +77,7 @@ def load_csv_data(filename, wanted_id = None):
             for row in csv.DictReader(csvfile):
                 if (wanted_id is not None and row['id'] == wanted_id) or (wanted_id is None):
                     data.append(row)
-    except ValueError as exc:
-        raise ValueError("Unable to load data from file '{}'".format(filename)) from exc
+    except: ValueError("Unable to load data from file '{}'".format(filename))
 
     return data
 
