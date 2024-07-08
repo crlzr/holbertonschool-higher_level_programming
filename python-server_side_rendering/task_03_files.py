@@ -38,8 +38,6 @@ def products():
         data = load_json_data("data/products.json", id)
     elif source == "csv":
         data = load_csv_data("data/products.csv", id)
-    else:
-        raise IndexError ("Wrong Source")
 
     return render_template('product_display.html', data=data, source=source, id=id)
 
