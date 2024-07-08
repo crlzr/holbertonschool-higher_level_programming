@@ -16,7 +16,7 @@ def generate_invitations(template, attendees):
     if not template:
         raise IndexError ("Template is empty, no output files generated.")
     if not attendees:
-        raise IndexError ("Attendee list is empty.")
+        raise IndexError ("No data provided, no output files generated.")
     # Process each attendee
     # count index of added attendees
     i = 0
