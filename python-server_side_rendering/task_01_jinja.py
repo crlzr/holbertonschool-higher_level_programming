@@ -1,25 +1,20 @@
 #!/usr/bin/python3
-""" Set up a Flask environment and create a basic Flask app"""
-
+"""Basic flask application that renders a HTML template"""
 from flask import Flask, render_template
 
 app = Flask(__name__)
 
-@app.route("/")
+@app.route('/')
 def home():
-    """ renders a HTML template """
-    return render_template("index.html")
+    return render_template('index.html')
 
-@app.route("/about")
+@app.route('/about')
 def about():
-    """ renders a HTML template """
-    return render_template("about.html")
+    return render_template('about.html')
 
-@app.route("/contact")
+@app.route('/contact')
 def contact():
-    """ renders a HTML template """
-    return render_template("contact.html")
-
+    return render_template('contact.html')
 
 if __name__ == '__main__':
-    app.run(host='localhost', port=5000, debug=True)
+    app.run(debug=True, port=5000)

@@ -22,7 +22,6 @@ def items():
     for key,value in rows.items():
 
         items_list = value
-
     return render_template('items.html', items=items_list)
 
 
