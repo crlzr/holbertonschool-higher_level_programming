@@ -3,20 +3,18 @@ All movie titles must be list in the HTML ul element with id list_movies
 You must use the Fetch API.
 . */
 
-fetch('https://swapi-api.hbtn.io/api/films/?format=json')
-  .then(response => response.json())
-  .then((data) => {
-    //console.log(data)
-    document.getElementById('list_movies');
-    let movies = data;
+function getTitle() {
+  fetch('https://swapi-api.hbtn.io/api/films/?format=json')
+    .then(response => response.json())
+    .then((data) => {
+      data.results.forEach((film) => {
+      const list = document.getElementById('list_movies');
+      const li = document.createElement("li");
+      li.textContent = film.title;
+      list.appendChild(li);
+      });
+    });
+}
 
-    movies.map(function(title)) {
-      let li = document.createElement('li');
-      li.appendChild(title);
-    ul.appendChild(list_movies)
-    }
-  })
- .catch(error => Error(), {
-})
-
-
+// Call the function to fetch and display the titles
+getTitle();
